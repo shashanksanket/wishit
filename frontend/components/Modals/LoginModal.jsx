@@ -30,7 +30,7 @@ const LoginModal = ({ isVisible, handler }) => {
         <Text style={styles.heading}>Log in or Sign up</Text>
         <Text style={styles.subHeading}>Enter your mobile number to get an OTP</Text>
         <FormControl>
-          <FormControl.Label _text={{ color: '#303A47', fontSize: 'lg', bold: '700', fontFamily:'GTMedium' }}>
+          <FormControl.Label _text={{ color: '#303A47', fontSize: 'lg', bold: '700', fontFamily:'GTWMedium'}}>
             Mobile Number
           </FormControl.Label>
           <Input
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   inputLeftText: {
     color: '#979DB5',
     marginLeft: 15,
-    fontFamily: "GTWMedium"
+    fontFamily: "GTARegular"
   },
   footer: {
     marginTop: 70,
@@ -104,11 +104,12 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     marginBottom: 5,
+    fontFamily: 'GTABold'
   },
   subHeading: {
     fontSize: 16,
     fontWeight: 'normal',
-    marginBottom: 16,
+    marginBottom: 32,
     color: '#676B89',
     fontFamily: "GTWRegular"
   },

@@ -2,7 +2,7 @@ import * as Font from 'expo-font';
 
 export async function loadFonts() {
   await Font.loadAsync({
-    'GTBold': require('./assets/fonts/GT_Walsheim_Pro/GTWalsheimPro-Bold.ttf'),
+    'GTWBold': require('./assets/fonts/GT_Walsheim_Pro/GTWalsheimPro-Bold.ttf'),
     'GTWRegular': require('./assets/fonts/GT_Walsheim_Pro/GTWalsheimPro-Regular.ttf'),
     'GTWMedium': require('./assets/fonts/GT_Walsheim_Pro/GTWalsheimPro-Medium.ttf'),
     'GTWBlack': require('./assets/fonts/GT_Walsheim_Pro/GTWalsheimPro-Black.ttf'),
