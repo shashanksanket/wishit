@@ -16,10 +16,10 @@ export default function Splash() {
   
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../assets/splash.png')} style={styles.backgroundImage}>
+        <ImageBackground source={require('../assets/images/splash.png')} style={styles.backgroundImage}>
           <View style={styles.content}>
             <View style={styles.logoContainer}>
-              <Image source={require('../assets/logo.png')} style={styles.logo} />
+              <Image source={require('../assets/images/logo.png')} style={styles.logo} />
             </View>
             <View style={styles.footer}>
               <Text style={styles.footerHeading}>Wishit</Text>

@@ -2,61 +2,36 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import { Input, Button, FormControl, Icon, Divider } from 'native-base';
 import { MaterialIcons } from 'react-native-vector-icons';
-import Modal from 'react-native-modal';
+import LoginModal from '../components/Modals/LoginModal';
 
 export default function Login({ navigation }) {
-  const [isBottomSheetVisible, setBottomSheetVisible] = useState(true);
+  const [isVerifyModalVisible, setIsVerifyModalVisible] = useState(false);
+  const [isLoginModalVisible, setIsLoginModalVisible] = useState(true);
   const [username, setUsername] = useState('');
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(true);
   };
 
-  const handleLogin = () => {
-    navigation.replace('Home');
+  const handleGetOtp = () => {
+    // navigation.navigate('Verify');
+    setIsLoginModalVisible(false);
+    setIsVerifyModalVisible(true);
   };
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/BG.png')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../assets/images/BG.png')} style={styles.backgroundImage}>
 
-        <Modal
-          isVisible={isBottomSheetVisible}
-          onBackdropPress={toggleBottomSheet}
-          style={{ margin: 0, justifyContent: 'flex-end' }}
-        >
-          <View style={styles.bottomSheet}>
-            <Text style={styles.heading}>Log in or Sign up</Text>
-            <Text style={styles.subHeading}>Enter your mobile number to get an OTP</Text>
-            <FormControl>
-              <FormControl.Label _text={{ color: '#303A47', fontSize: 'lg', bold: '700' }}>
-                Mobile Number
-              </FormControl.Label>
-              <Input
-                w={{ base: '100%', md: '5%' }}
-                InputLeftElement={
-                  <>
-                    <Text style={styles.inputLeftText}>+91</Text>
-                    <Divider orientation="vertical" height={6} ml={3} mr={2} borderColor="#979DB5" />
-                  </>
-                }
-                placeholder="Enter your phone number"
-              />
-            </FormControl>
+        {isLoginModalVisible && (
+          <LoginModal isVisible={isLoginModalVisible} handler={handleGetOtp} />
+        )}
 
-            <Button style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>Get OTP</Text>
-            </Button>
-            <View style={styles.footer}>
-              <Text style={styles.footerText}>By continuing, you agree to our</Text>
-              <Text style={styles.footerText}>
-                <Text style={{ textDecorationLine: 'underline' }}>Terms of Service</Text>{'    '}
-                <Text style={{ textDecorationLine: 'underline' }}>Privacy Policy</Text>{'    '}
-                <Text style={{ textDecorationLine: 'underline' }}>Content Privacy</Text>
-              </Text>
-            </View>
-          </View>
-        </Modal>
+        {isVerifyModalVisible && (
+          <Text>Aaysuh</Text>
+        )}
+
+
       </ImageBackground>
     </View>
   );
