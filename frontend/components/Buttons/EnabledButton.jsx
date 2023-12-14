@@ -18,16 +18,15 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: '100%',
         alignItems: 'center',
-        marginTop: 16,
+        marginTop: 24,
         borderRadius: 6,
         border: 1,
-        background: "linear - gradient(180deg, rgba(255, 255, 255, 0.12) 0 %, rgba(255, 255, 255, 0.00) 100 %), #5F27FF",
-        /* Form/Button/Primary Normal */
-        boxShadow: "0px 0px 0px 1px #4F47EB, 0px 1px 2px 0px rgba(26, 19, 161, 0.50)"
+        backgroundColor: "#5F27FF",
 },
     buttonText: {
     color: '#FFF',
     fontSize: 16,
+    fontFamily: "GTWBold"
 },
 
 })
