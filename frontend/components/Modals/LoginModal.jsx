@@ -18,7 +18,10 @@ const LoginModal = ({ isVisible, handler }) => {
   };
 
   const getOtpHandler = () => {
-    console.log(phoneNo)
+    // console.log(phoneNo)
+    handler();
+
+
   }
 
   return (

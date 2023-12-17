@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import { Input, Button, FormControl, Icon, Divider } from 'native-base';
 import { MaterialIcons } from 'react-native-vector-icons';
 import LoginModal from '../components/Modals/LoginModal';
+import VerifyModal from '../components/Modals/VerifyModal';
 
 export default function Login({ navigation }) {
   const [isVerifyModalVisible, setIsVerifyModalVisible] = useState(false);
@@ -23,14 +24,15 @@ export default function Login({ navigation }) {
     <View style={styles.container}>
       <ImageBackground source={require('../assets/images/BG.png')} style={styles.backgroundImage}>
 
-        {isLoginModalVisible && (
+        {/* {isLoginModalVisible && (
           <LoginModal isVisible={isLoginModalVisible} handler={handleGetOtp} />
-        )}
+        )} */}
 
-        {isVerifyModalVisible && (
-          <Text>Aaysuh</Text>
-        )}
+        {/* {isVerifyModalVisible && (
+          <VerifyModal isVisible={isVerifyModalVisible} />
+        )} */}
 
+        <VerifyModal isVisible={true} />
 
       </ImageBackground>
     </View>
