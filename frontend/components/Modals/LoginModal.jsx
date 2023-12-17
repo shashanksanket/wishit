@@ -38,6 +38,7 @@ const LoginModal = ({ isVisible, handler }) => {
           </FormControl.Label>
           <Input
             value={phoneNo}
+            maxLength={10}
             keyboardType="numeric"
             onChangeText={handlePhoneNoChange}
             w={{ base: '100%', md: '5%' }}

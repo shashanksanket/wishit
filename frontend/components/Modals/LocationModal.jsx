@@ -35,7 +35,7 @@ const LocationModal = ({ isVisible, handler1, handler2 }) => {
         <View>
           <EnabledButton text="Allow Location Access" handler={handler1} imageSrc={require('../../assets/images/gps.png')} />
 
-          <Button style={styles.button}>
+          <Button style={styles.button} onPress={handler2}>
             <Text style={{color: "#5F27FF"}}>Enter Location Manually</Text>
           </Button>
         </View>
