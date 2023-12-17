@@ -8,7 +8,7 @@ export default function Splash() {
   
     useEffect(() => {
       const timer = setTimeout(() => {
-        navigation.replace('Login');
+        navigation.replace('Location');
       }, 4000); // Redirect to the 'Login' screen after 3 seconds (adjust as needed)
   
       return () => clearTimeout(timer);

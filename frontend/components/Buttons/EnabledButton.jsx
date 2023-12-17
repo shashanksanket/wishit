@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Button } from 'native-base'
+import PropTypes from 'prop-types';
 
-const EnabledButton = ({ text, handler }) => {
+const EnabledButton = ({ text, handler, imageSrc }) => {
     return (
         <Button style={styles.button} onPress={handler}>
+            {imageSrc && (
+                <Image source={imageSrc} style={styles.buttonImage} />
+            )}
             <Text style={styles.buttonText}>{text}</Text>
         </Button>
     )
 }
+
+EnabledButton.propTypes = {
+    text: PropTypes.string.isRequired,
+    handler: PropTypes.func.isRequired,
+    imageSrc: PropTypes.any,
+  };
 
 export default EnabledButton
 
@@ -22,11 +32,18 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         border: 1,
         backgroundColor: "#5F27FF",
-},
+        flexDirection: "row"
+    },
     buttonText: {
-    color: '#FFF',
-    fontSize: 16,
-    fontFamily: "GTWBold"
-},
+        color: '#FFF',
+        fontSize: 16,
+        fontFamily: "GTWBold"
+    },
+
+    buttonImage: {
+        marginRight: 6,
+        width: 20,
+        height: 20
+    }
 
 })

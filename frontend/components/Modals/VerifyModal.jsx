@@ -5,10 +5,11 @@ import Modal from 'react-native-modal';
 import { Button, Divider, FormControl, Input } from 'native-base';
 import DisabledButton from '../Buttons/DisabledButton';
 import EnabledButton from '../Buttons/EnabledButton';
+import { useNavigation } from '@react-navigation/native';
 
 // Define the VerifyModal component
 const VerifyModal = ({ isVisible }) => {
-
+  const navigation = useNavigation();
   const [otp, setOtp] = useState(['', '', '', '']);
   const [focusedInput, setFocusedInput] = useState(null);
   const [isOtpComplete, setIsOtpComplete] = useState(false);
@@ -34,7 +35,7 @@ const VerifyModal = ({ isVisible }) => {
     const completeOtp = otp.join('');
     console.log(completeOtp)
     // TODO: Implement OTP verification logic here
-
+    navigation.navigate('Location')
     // For now, let's just navigate to a success screen
     // navigation.navigate('SuccessScreen');
   };

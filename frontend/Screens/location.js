@@ -4,33 +4,37 @@ import { Input, Button, FormControl, Icon, Divider } from 'native-base';
 import { MaterialIcons } from 'react-native-vector-icons';
 import LoginModal from '../components/Modals/LoginModal';
 import VerifyModal from '../components/Modals/VerifyModal';
+import LocationModal from '../components/Modals/LocationModal';
 
-export default function Login({ navigation }) {
-  const [isVerifyModalVisible, setIsVerifyModalVisible] = useState(false);
-  const [isLoginModalVisible, setIsLoginModalVisible] = useState(true);
+export default function Location({ navigation }) {
+  const [isLocationModalVisible, setIsLocationModalVisible] = useState(true);
+  const [isSelectLocationModalVisible, setIsSelectLocationModalVisible] = useState(false);
   const [username, setUsername] = useState('');
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(true);
   };
 
-  const handleGetOtp = () => {
-    // navigation.navigate('Verify');
-    setIsLoginModalVisible(false);
-    setIsVerifyModalVisible(true);
+  const handleAllowLocationAccess = () => {
+    console.log("Current location access granted")
+  };
+
+  const handleEnterLocationManually = () => {
+    setIsLocationModalVisible(false)
+    setIsSelectLocationModalVisible(true)
   };
 
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/images/BG.png')} style={styles.backgroundImage}>
 
-        {isLoginModalVisible && (
-          <LoginModal isVisible={isLoginModalVisible} handler={handleGetOtp} />
+        {isLocationModalVisible && (
+          <LocationModal isVisible={isLocationModalVisible} handler1={handleAllowLocationAccess} handler2={handleEnterLocationManually} />
         )}
 
-        {isVerifyModalVisible && (
+        {/* {isSelectLocationModalVisible && (
           <VerifyModal isVisible={isVerifyModalVisible} />
-        )}
+        )} */}
 
         {/* <VerifyModal isVisible={true} /> */}
 
