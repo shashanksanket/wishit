@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import Modal from 'react-native-modal';
 import { Button, Divider, FormControl, Input, NumberInputField } from 'native-base';
@@ -28,12 +28,16 @@ const LocationModal = ({ isVisible, handler1, handler2 }) => {
         <Text style={styles.heading}>What's your location</Text>
         <Text style={styles.subHeading}>We need your location to show available services, restaurants & products.</Text>
 
-
+        <View style={{width:"100%" , display: "flex", justifyContent: "center", alignItems: "center", marginTop:50, marginBottom: 0 }}>
+          <Image style={{height: 350 , width:350}} source={require("../../assets/images/location-img.png")} />
+        </View>
 
         <View>
-          <EnabledButton text="Get OTP" handler={handler1} imageSrc={".././assets/images/gps.svg"} />
+          <EnabledButton text="Allow Location Access" handler={handler1} imageSrc={require('../../assets/images/gps.png')} />
 
-          <DisabledButton text="Get OTP" />
+          <Button style={styles.button}>
+            <Text style={{color: "#5F27FF"}}>Enter Location Manually</Text>
+          </Button>
         </View>
 
 
@@ -92,5 +96,16 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#979DB5',
     fontSize: 16,
+  },
+  button: {
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 8,
+    borderRadius: 6,
+    border: 1,
+    backgroundColor: "#FFF"
   },
 })
